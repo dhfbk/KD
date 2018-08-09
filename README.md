@@ -117,6 +117,10 @@ public class Main {
     }
 }
 ```    
+### Support
+
+This software is provided as it is. For new versions and updates please check the project web page at : KD Key-Phrases Digger at DH FBK
+
 
 ### License:
 Keyphrase Digger (KD_Lib) is released under Apache License 2.0.
