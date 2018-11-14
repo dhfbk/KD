@@ -135,7 +135,6 @@ public class Main {
         options.addOption("STDOUT", "standard_out", false, "print results on standard out");
         options.addOption("h", "help", false, "print this message");
         options.addOption("om", "only_multiword", false, "display only multi-words");
-        options.addOption("luc", "use_lucene", false, "use lucene ranking score");
         options.addOption("fas", "skip_frequency_absorption", false, "skip frequency absorption");
         options.addOption("wp", "use_pattern_weight", false, "use the weight of pattern");
         options.addOption("ba", "boost_acronyms", false, "boost acronyms (for scientific articles)");
@@ -207,9 +206,7 @@ public class Main {
             if (line.hasOption("verbose")) {
                 configuration.verbose = true;
             }
-            if (line.hasOption("use_lucene")) {
-                configuration.use_lucene = true;
-            }
+
 
             if (line.hasOption("skip_frequency_absorption")) {
                 configuration.skipFrequencyAbsorption = true;

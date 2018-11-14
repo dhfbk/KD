@@ -9,21 +9,7 @@ import eu.fbk.dh.kd.lib.KD_configuration.ColumExtraction;
 import eu.fbk.dh.kd.lib.KD_rerank_methods.Method;
 import eu.fbk.dh.kd.models.KD_Model;
 import org.apache.commons.math.util.MathUtils;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.document.StringField;
-import org.apache.lucene.document.TextField;
-import org.apache.lucene.index.DirectoryReader;
-import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.Query;
-import org.apache.lucene.search.TopScoreDocCollector;
-import org.apache.lucene.store.Directory;
-import org.apache.lucene.store.RAMDirectory;
-import org.apache.lucene.util.Version;
+
 import org.mapdb.DB;
 import org.mapdb.DBMaker;
 import org.mapdb.HTreeMap;
@@ -39,7 +25,6 @@ import java.util.Map.Entry;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static org.apache.lucene.util.IOUtils.close;
 
 
 /**
@@ -441,8 +426,6 @@ public class KD_core {
         }
 
 
-        boolean use_lucene = configuration.use_lucene;
-
         Integer numberOfConcepts = configuration.numberOfConcepts;
         Integer local_frequency_threshold = configuration.local_frequency_threshold;
         KD_configuration.Prefer_Specific_Concept prefer_speficic_concept = configuration.prefer_specific_concept;
@@ -839,32 +822,6 @@ public class KD_core {
 
         //---------------------------end  synonymns block ------------------------//
 
-        //--------------------------- Lucene configuration ----------------------//
-
-
-        Directory lucene_index = new RAMDirectory();
-        StandardAnalyzer analyzer = new StandardAnalyzer();
-        IndexWriterConfig lucene_config = new IndexWriterConfig(Version.LUCENE_4_10_3, analyzer);
-        IndexSearcher searcher = null;
-        TopScoreDocCollector collector = null;
-        if (use_lucene) {
-            try {
-                IndexWriter indexWriter = new IndexWriter(lucene_index, lucene_config);
-                Document doc = new Document();
-                doc.add(new StringField("id", "file", Field.Store.YES));
-                doc.add(new TextField("text", recomposedTextFile.toString(), Field.Store.YES));
-                indexWriter.addDocument(doc);
-                indexWriter.close();
-                searcher = new IndexSearcher(DirectoryReader.open(lucene_index));
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        }
-
-
-        //--------------------------- end Lucene configuration -----------------//
 
 
         //--------------------------- score computation -------------------------//
@@ -892,18 +849,7 @@ public class KD_core {
             }
 
 
-            if (use_lucene) {
-                try {
-                    Query q = new QueryParser("text", analyzer).parse(entry.getValue().getString());
-                    collector = TopScoreDocCollector.create(1, true);
-                    searcher.search(q, collector);
 
-                    entry.getValue().score += (1 + collector.topDocs().getMaxScore());
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
             //entry.getValue().score *= Math.log( totalNumberOfToken / ((double) entry.getValue().frequency +1 ));
 
             entry.getValue().score *= entry.getValue().scoreBoost;
@@ -1053,7 +999,7 @@ public class KD_core {
 
     protected void finalize() throws Throwable {
         try {
-            close();        // close open files
+            // close open files
             this.languageDB.close();
         } finally {
             super.finalize();

@@ -83,10 +83,7 @@ public class KD_configuration {
      */
     public boolean no_rerank = false;
 
-    /**
-     * add Apache Lucene booster in the score computation.
-     */
-    public boolean use_lucene = false;
+
     /**
      * Disables or enables the frequency re-computation on shorter/longer key-phrases.
      */
