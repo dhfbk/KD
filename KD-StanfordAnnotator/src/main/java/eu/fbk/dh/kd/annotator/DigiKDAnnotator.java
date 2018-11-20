@@ -54,7 +54,7 @@ public class DigiKDAnnotator implements Annotator {
     public DigiKDAnnotator(String annotatorName, Properties prop) {
 
 
-        this.lang = KD_core.Language.valueOf(prop.getProperty(annotatorName + ".language", "ITALIAN").toUpperCase());
+        this.lang = KD_core.Language.valueOf(prop.getProperty(annotatorName + ".language", "ENGLISH").toUpperCase());
 
         configuration.languagePackPath = prop.getProperty(annotatorName + ".languageFolder", KD_configuration.getDefault_laguage_pack_localtion());
 
@@ -70,7 +70,7 @@ public class DigiKDAnnotator implements Annotator {
         configuration.group_by = KD_configuration.Group.valueOf(prop.getProperty(annotatorName + ".group_by", "NONE").toUpperCase());
 
         configuration.no_syn = Boolean.parseBoolean(prop.getProperty(annotatorName + ".no_syn", "false"));
-        configuration.use_lucene = Boolean.parseBoolean(prop.getProperty(annotatorName + ".use_lucene", "false"));
+//        configuration.use_lucene = Boolean.parseBoolean(prop.getProperty(annotatorName + ".use_lucene", "false"));
         configuration.no_idf = Boolean.parseBoolean(prop.getProperty(annotatorName + ".no_idf", "false"));
         configuration.use_pattern_weight = Boolean.parseBoolean(prop.getProperty(annotatorName + ".use_pattern_weight", "false"));
         configuration.capitalize_pos = Boolean.parseBoolean(prop.getProperty(annotatorName + ".capitalize_pos", "false"));
@@ -139,7 +139,6 @@ public class DigiKDAnnotator implements Annotator {
             for (CoreMap sentence : annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
                 List<CoreLabel> tokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
                 for (CoreLabel c : tokens) {
-                    //System.out.println(c.word()+"\t"+c.get(CoreAnnotations.LemmaAnnotation.class)+"\t"+c.get(CoreAnnotations.PartOfSpeechAnnotation.class));
                     doc.append(c.word() + "\t" + c.get(CoreAnnotations.LemmaAnnotation.class) + "\t" + c
                             .get(CoreAnnotations.PartOfSpeechAnnotation.class) + "\n");
                 }
