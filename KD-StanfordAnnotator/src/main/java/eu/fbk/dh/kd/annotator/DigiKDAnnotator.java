@@ -56,6 +56,13 @@ public class DigiKDAnnotator implements Annotator {
 
         this.lang = KD_core.Language.valueOf(prop.getProperty(annotatorName + ".language", "ENGLISH").toUpperCase());
 
+        if (prop.getProperty(annotatorName + ".language", "ENGLISH").toUpperCase().equals("CUSTOM")){
+            this.lang = KD_core.Language.CUSTOM;
+            this.lang.set_Custom_Language(prop.getProperty(annotatorName + ".languageName", "ENGLISH").toUpperCase());
+        }
+
+
+
         configuration.languagePackPath = prop.getProperty(annotatorName + ".languageFolder", KD_configuration.getDefault_laguage_pack_localtion());
 
         configuration.only_multiword = Boolean.parseBoolean(prop.getProperty(annotatorName + ".only_multiword", "false"));
@@ -85,8 +92,9 @@ public class DigiKDAnnotator implements Annotator {
         configuration.no_abstract = Boolean.parseBoolean(prop.getProperty(annotatorName + ".no_abstract", "true"));
         configuration.rerank_by_position = Boolean.parseBoolean(prop.getProperty(annotatorName + ".rerank_by_position", "false"));
 
-        configuration.skip_keyword_with_not_allowed_words = Boolean.parseBoolean(prop.getProperty(annotatorName + ".skip_keyword_with_not_allowed_words", "true"));
 
+
+        configuration.skip_keyword_with_not_allowed_words = Boolean.parseBoolean(prop.getProperty(annotatorName + ".skip_keyword_with_not_allowed_words", "true"));
         configuration.verbose = false;
 
         if (Boolean.parseBoolean(prop.getProperty(annotatorName + ".update", "false"))) {
