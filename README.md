@@ -22,7 +22,7 @@ Introduction
 ------------
 
 This document describes the API for starting and using in your code the KD tool for the keyphrase extraction. The tool uses both statistical measures and linguistic information to detect a weighted list of n-grams representing the most important concepts of a text.
-Example and Tutorial
+[Demo](dhlab.fbk.eu:8080/KD_KeyDigger/)
 
 
 #### Requirements:
