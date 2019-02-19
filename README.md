@@ -7,14 +7,14 @@ Keyphrase Digger (KD) is a rule-based system for keyphrase extraction. It is a J
 #### Main Features:
 
 * Extraction of multi-words
-* Multilinguality (EN, IT, and DE)
+* Multilinguality (EN, IT, FR and DE)
 * Easily extendible to other languages
 * Higher customizability than KX
 * High processing speed
 * Clustering of keyphrases under the same lemma
-* Various accepted formats and PoS tagsets: Stanford PoS Tagger (EN), TreeTagger (IT and EN), TextPro (IT and EN)
+* Various accepted formats and PoS tagsets: Stanford PoS Tagger (EN,FR), TreeTagger (IT, DE, FR and EN), TextPro (IT and EN)
 * Boost of specific PoS patterns
-* Integration of Apache Lucene Library
+
 
 
 
@@ -117,6 +117,7 @@ public class Main {
     }
 }
 ```    
+
 ### Support
 
 This software is provided as it is. For new versions and updates please check the project web page at : KD Key-Phrases Digger at DH FBK
@@ -126,6 +127,10 @@ This software is provided as it is. For new versions and updates please check th
 Keyphrase Digger (KD_Lib) is released under Apache License 2.0.
 
 If you want to use KD-Runner and KD-StanfordAnnotator you have to apply GPLv3 or later due to Stanford CoreNLP license extension. 
+
+### Acknowledgment:
+The French patterns have been kindly provided by Tien-Duc Cao (Inria Saclay) and Xavier Tannier (Sorbonne Université). 
+
 
 ### Reference:
 

@@ -933,10 +933,27 @@ public class KD_core {
 
         expressions_collected = KD_concept_sorter.sort(expressions_collected, Sort.SCORE, SortDirection.DESC);
 
+        double maxScore = 1.0;
+        double minScore = 0.0;
+
+
+        if (expressions_collected.size() >0) {
+             maxScore = ((KD_keyconcept) (expressions_collected.values().toArray()[0])).score;
+             minScore = ((KD_keyconcept) (expressions_collected.values().toArray()[expressions_collected.size() - 1])).score;
+        }
+
+
 
         for (Entry<String, KD_keyconcept> entry : expressions_collected.entrySet()) {
 
+
+            entry.getValue().normalized_score = (entry.getValue().score - minScore) / (maxScore - minScore);
+
+            entry.getValue().normalized_score = MathUtils.round(entry.getValue().normalized_score, 5);
             entry.getValue().score = MathUtils.round(entry.getValue().score, 3);
+
+
+
 
             //output.append(entry.getValue() + "\n");
             if (only_multiword) {
@@ -962,6 +979,7 @@ public class KD_core {
                     }
                 }
             }
+
         }
 
         if (configuration.verbose) {
@@ -980,6 +998,9 @@ public class KD_core {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+
 
 
         return outputList;

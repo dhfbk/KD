@@ -24,6 +24,10 @@ public class KD_keyconcept {
      * double values representing the score gives by the tool to the current key-phrase
      */
     public double score = 0;
+    /**
+     * double values representing the normalized score from 0 to 1 gives by the tool to the current key-phrase
+     */
+    public double normalized_score = 0;
 
     int chainlenght = 0;
     Double scoreBoost = 1.0;
