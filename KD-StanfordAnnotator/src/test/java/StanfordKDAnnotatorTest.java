@@ -26,6 +26,7 @@ public class StanfordKDAnnotatorTest {
         Properties props = new Properties();
         props.setProperty("customAnnotatorClass.keyphrase", "eu.fbk.dh.kd.annotator.DigiKDAnnotator");
         props.setProperty("annotators", "tokenize, ssplit, pos, lemma, keyphrase");
+        props.setProperty("keyphrase.pos_class", "edu.stanford.nlp.ling.CoreAnnotations$LemmaAnnotation");
 
         StanfordCoreNLP pipeline  = new StanfordCoreNLP(props);
         Annotation annotation = new Annotation(text);
