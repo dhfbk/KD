@@ -36,6 +36,7 @@ Java 1.8+ is needed
 3. mvn package
 ````
 The main runnable jar is in `KD-Runnable/target/KD.jar`
+
 The library with all dependencies is in `KD-Lib/target/KD-Lib-jar-with-dependencies.jar`
 
 if you want install KD in your .m2 folder type: `mvn install`
@@ -50,6 +51,7 @@ CONLL format (i.e. tab separated): available for both English and Italian and fo
 
 open command line shell
 go to the KD folder (the folder containing KD.jar)
+
 `java -jar KD.jar -lang ENGLISH -p WEAK -us -v -n 50 -m 6 <Folder or File to be processed>`
 
 #### Hints:
