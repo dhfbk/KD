@@ -1,0 +1,148 @@
+reading read reads reading_operation read_operation
+writing writings write writes written writing_operation write_operation
+rewriting rewrite rewrites rewritten rewriting_operation rewrite_operation
+address addresses
+disk disks disc discs
+optical_disk optical_disks optical_disc optical_discs
+move moves movement movements movement_operation
+tooth teeth
+cut cuts cutting cutting_operation
+workpiece workpieces work_piece work_pieces
+apparatus apparatuses
+body bodies
+process processes
+rotating rotation rotations rotate rotates rotated
+aligning alignment alignments align aligns aligned alignment_operation
+lens lenses
+notch notches
+integrated_circuit integrated_circuits
+reproducing reproduction reproductions reproduced reproduces reproduce reproducing_operation reproduction_operation
+recording recorded records record recording_operation
+reflecting reflection reflections reflect reflects reflected
+memory memories
+storing storage store stores stored storing_operation
+construction construct constructs constructed
+playback_apparatus playback_apparatuses
+relation relations relationship  relationships
+accessing access accessed accesses accessing_operation access_operation
+configuration configured configure configures
+correction corrected corrects correcting
+change changes changed
+focusing focussing focuses focused focusing_operation focussing_operation focus_operation
+reducing reduction reduce reduces reduced
+conversion convert converts converted converting
+manufacturing manufacture manufactures manufactured manufacturing_operation
+installing installation install installs installed
+extending extension extend extends extended
+measuring measure measures measured
+sending send sends sent
+decoding decode decodes decoded decoding_operation
+removing removal romove romoves removed removing_operation
+medium media
+controlling control controlled controls controlling_operation control_operation
+calculating calculation calculations calculated calculates calculate
+objective_lens objective_lenses
+recording_medium recording_media record_medium record_media
+frequency frequencies
+driving drives driven
+buffer_memory buffer_memories
+disk_cartridge disk_cartridges disc_cartridge disc_cartridges
+reproducing_device reproducing_apparatus reproducing_apparatuses reproduction_apparatus reproduction_apparatuses
+cross crosses
+pushing push pushes pushed
+refractive_index refractive_indexes
+irradiation irradiate irradiates irradiated
+disk_drive disk_drives disc_drive disc_drives
+disc_player disc_players disk_player disk_players
+recording_device recording_apparatus recording_apparatuses
+disc_table disc_tables disk_table disck_tables
+modulating modulation modulate modulates modulated
+object_lens object_lenses
+emitting emission emitted emits
+recording_disc recording_discs recording_disk recording_disks
+transferring transfer transfers transferred
+coupling coupled
+loading load loads loaded loading_operation
+disk_device disk_devices disc_device disc_devices
+diffraction diffracted
+shifting shift shifts shifted
+sum_signal sum_signals
+displacement displacements displace displaces displaced
+disk_apparatus disk_apparatuses disc_apparatus disc_apparatuses
+selecting selection select selects selected
+comparison compare compares compared
+record_medium record_media
+transmitting transmission transmit transmits transmitted
+receiving receive receives received
+radiate radiates radiated radiation
+discriminating discriminate discriminates discriminated
+pitch pitches
+polarity polarities
+inverting inversion invert inverts inverted
+omitting omission omit omits omitted
+overwriting overwrite overwritten overwriting overwriting_operation
+wobble wobbles wobbling wobbled
+seek seeking seek_operation seeking_operation
+tracking tracking_operation
+search searches searching search_operation
+erase erasing erased erases erasing_operation
+switching switched switching_operation
+jump jumpes jumped jumping jumping_operation jump_operation
+verify verifying verifying_operation verify_operation
+scan scanning scans scanned scanning_operation
+detect detects detected detection detection_operation detecting_operation
+adjust adjusts adjusted adjustment adjusting adjusting_operation adjustment_operation
+copy copies copied copying copying_operation copy_operation
+reset resets resetting resetting_operation
+close closes closed closing closing_operation close_operation
+re-recording re-recording_operation
+calibration calibrating calibrate calibrates calibrating_operation calibration_operation
+inizialize inizialization inizialization_operation
+lock locking locks locked locking_operation
+lens_seek lens_seek_operation
+focus_jump focus_jump_operation
+focus_control focus_control_operation focus_controlling
+servo_control servo_control_operation
+edit edits editing edit_operation editing_operation
+track_access track_accessing track_access_operation track_accessing_operation
+compensation compensation_operation compensating compensate compensate_operation
+information_reproducing information_reproducing_operation
+transfer transferring transfer_operation
+readout readout_operation
+pickup pick-up
+optical_pickup optical_pick-up
+optical_recording_medium optical_information_recording_medium
+optical_recording_method optical_information_recording_method
+optical_recording optical_information_recording
+dvd-rw rewritable_dvd
+signal_to_noise_ratio signal-to-noise_ratio
+securing sucures secured
+spacing spaces spaced
+directing directs directed
+pressing presses pressed
+positioning positioned
+separating separates separated
+detecting detects detected
+exposing exposes exposed
+irradiating irradiates irradiated
+assembling assemble assembled assembling_operation
+dividing divides divided
+lowering lowers lowered
+deforming deforms deformed
+projection projecting projects projected
+falicitate falicitated
+filling fills filled
+repetition repeating repeat repeats repeated
+welding weld welds welded welding_operation weld_operation
+drilling drilling_operation drilled
+forging forging_operation
+milling milling_operation
+grinding grinding_operation
+trimming trimming_operation
+replacement replacing replace replaces replaced replacement_opration
+removal removing remove removes removed removal_operation removing_operation
+soldering solder solders soldered soldering_operation
+boring boring_operation
+milling milling_operation
+wrenching wrenching_operation
+mounting mounted mounting_operation

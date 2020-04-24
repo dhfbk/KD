@@ -28,9 +28,13 @@ public class Example {
 
 		//configuration.languagePackPath = <languagePackPath String> ;//Overrides the default path with the new one taken from the command line parameter
 
+		//Create an instance of the KD core.
+		// Write this code line before the KD_loader.run_the_updater in order to create the dafualt language folder on the first run
+		KD_core kd_core = new KD_core(KD_core.Threads.ONE);
+
 		KD_loader.run_the_updater(lang, configuration.languagePackPath); //Updates the configuration file if something is changed
 
-		KD_core kd_core = new KD_core(KD_core.Threads.ONE);//Create an instance of the KD core
+
 
 		LinkedList<KD_keyconcept> concept_list = kd_core.extractExpressions(lang, configuration, pathToFIle, null);
 		for (KD_keyconcept k : concept_list) { //loop over the extracted key_phrases and print the results

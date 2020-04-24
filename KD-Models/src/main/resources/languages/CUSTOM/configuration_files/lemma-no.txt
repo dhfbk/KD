@@ -1,0 +1,4 @@
+essere
+avere
+__NULL__
+__null__

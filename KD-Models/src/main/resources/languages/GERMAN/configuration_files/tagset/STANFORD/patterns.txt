@@ -1,0 +1,8 @@
+# The # char is the comment.See the other languages for a complete example 
+#Example of a Bigram: "Tag_adj","Tag_noun",weight(1 is neutral)
+#Unigrams
+"Tag_For_adjective", 1
+"Tag_For_noun", 1
+
+#Bigrams
+"Tag_for_adjective","Tag_for_noun",1

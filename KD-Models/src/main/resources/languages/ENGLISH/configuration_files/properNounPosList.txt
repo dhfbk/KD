@@ -1,0 +1,3 @@
+NP0
+NNP
+NNPS

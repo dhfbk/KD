@@ -103,7 +103,6 @@ public class KD_loader {
                 prop.setProperty("properNounPosList_md5", "");
             }
 
-
             if (!(new File(pathPrefix + "configuration_files" + File.separator +"keyconcept-yes.txt")).exists()) {
                 String filePath = pathPrefix + "configuration_files" + File.separator +"keyconcept-yes.txt";
                 BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath), "UTF-8"));
