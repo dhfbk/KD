@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by giovannimoretti on 24/05/16.
  *
- * @author giovannimoretti
+ * @author Giovanni Moretti - DH Group FBK.
  * @version $Id: $Id
  */
 public class DigiKDResult {
@@ -33,6 +33,12 @@ public class DigiKDResult {
      * @param lemmas a {@link java.util.ArrayList} object.
      * @param tokens a {@link java.util.ArrayList} object.
      * @param posList a {@link java.util.List} object.
+     * @param stems a {@link java.util.List} object.
+     * @param synonyms a {@link java.util.List} object.
+     * @param idf a {@link java.lang.Double} object.
+     * @param score_boost a {@link java.lang.Double} object.
+     * @param pattern_boost a {@link java.lang.Double} object.
+     * @param chain_length a {@link java.lang.Integer} object.
      */
     public DigiKDResult(String keyphrase, Integer frequency, Double score, ArrayList<String> lemmas,
                         ArrayList<String> tokens, List<String> posList, ArrayList<String> stems, ArrayList<String> synonyms, Double idf, Double score_boost, Double pattern_boost, Integer chain_length) {

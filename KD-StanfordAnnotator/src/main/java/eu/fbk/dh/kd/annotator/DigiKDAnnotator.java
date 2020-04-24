@@ -7,7 +7,6 @@ import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.Annotator;
 import edu.stanford.nlp.util.ArraySet;
 import edu.stanford.nlp.util.CoreMap;
-import edu.stanford.nlp.util.TypesafeMap;
 import eu.fbk.dh.kd.lib.KD_configuration;
 import eu.fbk.dh.kd.lib.KD_core;
 import eu.fbk.dh.kd.lib.KD_keyconcept;
@@ -18,7 +17,7 @@ import java.util.*;
 /**
  * Created by giovannimoretti on 22/05/16.
  *
- * @author giovannimoretti
+ * @author Giovanni Moretti - DH Group FBK.
  * @version $Id: $Id
  */
 public class DigiKDAnnotator implements Annotator {
@@ -26,7 +25,7 @@ public class DigiKDAnnotator implements Annotator {
     private KD_configuration configuration = new KD_configuration();
     private KD_core.Language lang = KD_core.Language.ENGLISH;
     private KD_core kd;
-    private Class posClass;
+
 
     /**
      * Stanford Annotator for KD Keyphrase extractor
@@ -50,17 +49,18 @@ public class DigiKDAnnotator implements Annotator {
      * </ul>
      *
      * @param annotatorName a {@link java.lang.String} object.
-     * @param prop          a {@link java.util.Properties} object.
+     * @param prop a {@link java.util.Properties} object.
      */
     public DigiKDAnnotator(String annotatorName, Properties prop) {
 
 
         this.lang = KD_core.Language.valueOf(prop.getProperty(annotatorName + ".language", "ENGLISH").toUpperCase());
 
-        if (prop.getProperty(annotatorName + ".language", "ENGLISH").toUpperCase().equals("CUSTOM")) {
+        if (prop.getProperty(annotatorName + ".language", "ENGLISH").toUpperCase().equals("CUSTOM")){
             this.lang = KD_core.Language.CUSTOM;
             this.lang.set_Custom_Language(prop.getProperty(annotatorName + ".languageName", "ENGLISH").toUpperCase());
         }
+
 
 
         configuration.languagePackPath = prop.getProperty(annotatorName + ".languageFolder", KD_configuration.getDefault_laguage_pack_localtion());
@@ -92,13 +92,7 @@ public class DigiKDAnnotator implements Annotator {
         configuration.no_abstract = Boolean.parseBoolean(prop.getProperty(annotatorName + ".no_abstract", "true"));
         configuration.rerank_by_position = Boolean.parseBoolean(prop.getProperty(annotatorName + ".rerank_by_position", "false"));
 
-        posClass = CoreAnnotations.PartOfSpeechAnnotation.class;
-        try {
-            posClass = Class.forName(prop.getProperty(annotatorName + ".pos_class"));
-        } catch (Exception e) {
-            // ignored
-            // e.printStackTrace();
-        }
+
 
         configuration.skip_keyword_with_not_allowed_words = Boolean.parseBoolean(prop.getProperty(annotatorName + ".skip_keyword_with_not_allowed_words", "true"));
         configuration.verbose = false;
@@ -142,20 +136,19 @@ public class DigiKDAnnotator implements Annotator {
         this.kd = DigiKDModel.getInstance(t);
 
     }
-
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     public void annotate(Annotation annotation) {
 
         StringBuffer doc = new StringBuffer();
 
         if (annotation.containsKey(CoreAnnotations.SentencesAnnotation.class)) {
+            //iterate on sentences
             for (CoreMap sentence : annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
+                //iterate on tokens
                 List<CoreLabel> tokens = sentence.get(CoreAnnotations.TokensAnnotation.class);
                 for (CoreLabel c : tokens) {
                     doc.append(c.word() + "\t" + c.get(CoreAnnotations.LemmaAnnotation.class) + "\t" + c
-                            .get(posClass) + "\n");
+                            .get(CoreAnnotations.PartOfSpeechAnnotation.class) + "\n");
                 }
                 doc.append("\n");
             }
@@ -166,7 +159,7 @@ public class DigiKDAnnotator implements Annotator {
             for (KD_keyconcept k : kd.extractExpressions(this.lang, this.configuration, null, doc)) {
                 listOfKeys
                         .add(new DigiKDResult(k.getString(), k.frequency, k.score, k.getLemmaArray(), k.getTokenArray(),
-                                k.getPosList(), k.getStemArray(), k.getSysnonymsArray(), k.getIdf(), k.getScoreBoost(), k.getPatternBoost(), k.getTokenChainLength()));
+                                k.getPosList(),k.getStemArray(),k.getSysnonymsArray(),k.getIdf(),k.getScoreBoost(),k.getPatternBoost(),k.getTokenChainLength()));
             }
 
         } catch (NullPointerException n) {
@@ -176,17 +169,13 @@ public class DigiKDAnnotator implements Annotator {
 
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Set<Class<? extends CoreAnnotation>> requirementsSatisfied() {
         return Collections.singleton(DigiKDAnnotations.KeyphrasesAnnotation.class);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    /** {@inheritDoc} */
     @Override
     public Set<Class<? extends CoreAnnotation>> requires() {
         return Collections.unmodifiableSet(new ArraySet<>(Arrays.asList(

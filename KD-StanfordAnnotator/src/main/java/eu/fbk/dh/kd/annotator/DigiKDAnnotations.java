@@ -9,11 +9,11 @@ import java.util.List;
 /**
  * Created by giovannimoretti on 14/09/16.
  *
- * @author Giovanni Moretti
+ * @author Giovanni Moretti - DH Group FBK.
  * @version $Id: $Id
  */
-public class DigiKDAnnotations {
 
+public class DigiKDAnnotations {
     @JSONLabel("keywords")
     public static class KeyphrasesAnnotation implements CoreAnnotation<List<DigiKDResult>> {
         @Override
@@ -21,8 +21,6 @@ public class DigiKDAnnotations {
             return ErasureUtils.uncheckedCast(List.class);
         }
     }
-
-
 }
 
 

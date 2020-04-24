@@ -40,7 +40,12 @@ class KD_concept_sorter {
 
 }
 
-
+/**
+ * Util Comparator Class of the tool.
+ *
+ * @author Giovanni Moretti - DH Group FBK.
+ * @version $Id: $Id
+ */
 class KD_concept_comparator implements Comparator<String> {
 
 

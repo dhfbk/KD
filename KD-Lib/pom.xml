@@ -71,7 +71,7 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-
+                    <finalName>KD-Lib</finalName>
                 </configuration>
                 <executions>
                     <execution>

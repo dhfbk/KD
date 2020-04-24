@@ -1,0 +1,26 @@
+-classpath
+'/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-Lib/target/classes:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-Runner/target/classes:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-StanfordAnnotator/target/classes:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-Models/target/classes:/Users/giovannimoretti/.m2/repository/org/mapdb/mapdb/3.0.1/mapdb-3.0.1.jar:/Users/giovannimoretti/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.0.2/kotlin-stdlib-1.0.2.jar:/Users/giovannimoretti/.m2/repository/org/jetbrains/kotlin/kotlin-runtime/1.0.2/kotlin-runtime-1.0.2.jar:/Users/giovannimoretti/.m2/repository/org/eclipse/collections/eclipse-collections-api/7.1.2/eclipse-collections-api-7.1.2.jar:/Users/giovannimoretti/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar:/Users/giovannimoretti/.m2/repository/org/eclipse/collections/eclipse-collections/7.1.2/eclipse-collections-7.1.2.jar:/Users/giovannimoretti/.m2/repository/org/eclipse/collections/eclipse-collections-forkjoin/7.1.2/eclipse-collections-forkjoin-7.1.2.jar:/Users/giovannimoretti/.m2/repository/net/jpountz/lz4/lz4/1.3.0/lz4-1.3.0.jar:/Users/giovannimoretti/.m2/repository/org/mapdb/elsa/3.0.0-M5/elsa-3.0.0-M5.jar:/Users/giovannimoretti/.m2/repository/org/apache/commons/commons-lang3/3.3.1/commons-lang3-3.3.1.jar:/Users/giovannimoretti/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/giovannimoretti/.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar:/Users/giovannimoretti/.m2/repository/org/apache/commons/commons-math/2.2/commons-math-2.2.jar:/Users/giovannimoretti/.m2/repository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar:/Users/giovannimoretti/.m2/repository/org/slf4j/slf4j-simple/1.7.21/slf4j-simple-1.7.21.jar:/Users/giovannimoretti/.m2/repository/edu/stanford/nlp/stanford-corenlp/3.9.1/stanford-corenlp-3.9.1.jar:/Users/giovannimoretti/.m2/repository/com/apple/AppleJavaExtensions/1.4/AppleJavaExtensions-1.4.jar:/Users/giovannimoretti/.m2/repository/de/jollyday/jollyday/0.4.9/jollyday-0.4.9.jar:/Users/giovannimoretti/.m2/repository/javax/xml/bind/jaxb-api/2.2.7/jaxb-api-2.2.7.jar:/Users/giovannimoretti/.m2/repository/org/apache/lucene/lucene-queryparser/4.10.3/lucene-queryparser-4.10.3.jar:/Users/giovannimoretti/.m2/repository/org/apache/lucene/lucene-sandbox/4.10.3/lucene-sandbox-4.10.3.jar:/Users/giovannimoretti/.m2/repository/org/apache/lucene/lucene-analyzers-common/4.10.3/lucene-analyzers-common-4.10.3.jar:/Users/giovannimoretti/.m2/repository/org/apache/lucene/lucene-queries/4.10.3/lucene-queries-4.10.3.jar:/Users/giovannimoretti/.m2/repository/org/apache/lucene/lucene-core/4.10.3/lucene-core-4.10.3.jar:/Users/giovannimoretti/.m2/repository/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar:/Users/giovannimoretti/.m2/repository/com/io7m/xom/xom/1.2.10/xom-1.2.10.jar:/Users/giovannimoretti/.m2/repository/xml-apis/xml-apis/1.3.03/xml-apis-1.3.03.jar:/Users/giovannimoretti/.m2/repository/xerces/xercesImpl/2.8.0/xercesImpl-2.8.0.jar:/Users/giovannimoretti/.m2/repository/xalan/xalan/2.7.0/xalan-2.7.0.jar:/Users/giovannimoretti/.m2/repository/joda-time/joda-time/2.9.4/joda-time-2.9.4.jar:/Users/giovannimoretti/.m2/repository/com/googlecode/efficient-java-matrix-library/ejml/0.23/ejml-0.23.jar:/Users/giovannimoretti/.m2/repository/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar:/Users/giovannimoretti/.m2/repository/com/google/protobuf/protobuf-java/3.2.0/protobuf-java-3.2.0.jar:/Users/giovannimoretti/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/Users/giovannimoretti/.m2/repository/eu/fbk/utils/utils-gson/3.0/utils-gson-3.0.jar:/Users/giovannimoretti/.m2/repository/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar'
+-encoding
+'UTF-8'
+-overview
+'/Volumes/Storage/Dropbox/DropBoxesCodes/KD/src/main/javadoc/overview.html'
+-public
+-sourcepath
+'/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-Lib/src/main/java:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-Lib/target/generated-sources/annotations:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-Runner/src/main/java:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-Runner/target/generated-sources/annotations:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-StanfordAnnotator/src/main/java:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-StanfordAnnotator/target/generated-sources/annotations:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-StanfordAnnotator/src/main/javadoc:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-Models/src/main/java:/Volumes/Storage/Dropbox/DropBoxesCodes/KD/KD-Models/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2020. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Volumes/Storage/Dropbox/DropBoxesCodes/KD/target/site/apidocs'
+-docencoding
+'UTF-8'
+-docfilessubdirs
+-doctitle
+'KD 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/Volumes/Storage/Dropbox/DropBoxesCodes/KD/target/javadoc-bundle-options'
+-use
+-windowtitle
+'KD 1.0-SNAPSHOT API'

@@ -8,6 +8,14 @@
     <artifactId>KD</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
     <modules>
         <module>KD-Lib</module>
         <module>KD-Runner</module>
@@ -61,12 +69,35 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>3.1.1</version>
                 <configuration>
                     <show>public</show>
+                    <version>false</version>
                     <overview>${basedir}/src/main/javadoc/overview.html</overview>
+                    <javadocDirectory/>
                     <excludePackageNames>eu.fbk.dh.stemmer.*</excludePackageNames>
+                    <docfilessubdirs>true</docfilessubdirs>
                 </configuration>
+
+                <executions>
+                    <execution>
+                        <id>aggregate</id>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                        <phase>site</phase>
+                        <configuration>
+                            <show>public</show>
+                            <version>false</version>
+                            <overview>${basedir}/src/main/javadoc/overview.html</overview>
+                            <docfilessubdirs>true</docfilessubdirs>
+                            <excludePackageNames>eu.fbk.dh.stemmer.*</excludePackageNames>
+                        </configuration>
+                    </execution>
+
+                </executions>
+
+
             </plugin>
         </plugins>
 

@@ -5,11 +5,10 @@ import eu.fbk.dh.kd.lib.KD_core;
 /**
  * Created by giovannimoretti on 14/09/16.
  *
- * @author giovannimoretti
+ * @author Giovanni Moretti - DH Group FBK.
  * @version $Id: $Id
  */
 public class DigiKDModel {
-
     private static KD_core kd;
 
     /**

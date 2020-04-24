@@ -93,6 +93,9 @@ public class KD_loader {
             if (prop.getProperty("pos_blacklist_md5") == null) {
                 prop.setProperty("pos_blacklist_md5", "");
             }
+            if (prop.getProperty("synonyms_md5") == null) {
+                prop.setProperty("synonyms_md5", "");
+            }
             if (prop.getProperty("invFreq_md5") == null) {
                 prop.setProperty("invFreq_md5", "");
             }
@@ -199,7 +202,7 @@ public class KD_loader {
 
             if (prop.getProperty("synonyms_md5").compareTo(KD_utils.md5(pathPrefix + "configuration_files" + File.separator +"synonyms.txt")) != 0) {
                 prop.setProperty("synonyms_md5", KD_utils.md5(pathPrefix + "configuration_files" + File.separator +"synonyms.txt"));
-                //System.out.println("Something is changed in the synonyms list... I'm working on that!");
+                System.out.println("Something is changed in the synonyms list... I'm working on that!");
                 KD_loader.make_synonyms(pathPrefix + "configuration_files" + File.separator +"synonyms.txt", lang);
             }
 

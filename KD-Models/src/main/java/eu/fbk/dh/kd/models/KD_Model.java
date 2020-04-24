@@ -122,7 +122,7 @@ public class KD_Model {
             }
 
         }else{
-            LOGGER.warn("KD configuration folder:"+ path);
+            LOGGER.info("KD configuration folder:"+ path);
         }
     }
 }
