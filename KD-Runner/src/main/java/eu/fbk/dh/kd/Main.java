@@ -23,6 +23,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -127,8 +128,9 @@ public class Main {
 
         options.addOption(OptionBuilder.withLongOpt("lang_folder").withDescription("set the language folder path").withArgName("Path to the folder").hasArg().create("lp"));
 
+        options.addOption(OptionBuilder.withLongOpt("new_language").withDescription("create new empty language, in your language_folder").withArgName("Language name").hasArg().create("nl"));
 
-        options.addOption(OptionBuilder.withLongOpt("new_language").withDescription("create new empty language folder").withArgName("Language name").hasArg().create("nl"));
+        options.addOption(OptionBuilder.withLongOpt("new_language_folder").withDescription("create new empty language folder from scratch").withArgName("Path to new language folder").hasArg().create("nf"));
 
 
 
@@ -258,6 +260,9 @@ public class Main {
             }
 
 
+
+
+
             if (line.hasOption("lang_folder")) {
                 try {
                     configuration.languagePackPath = line.getOptionValue("lang_folder");
@@ -270,12 +275,15 @@ public class Main {
                 }
             }
 
+
+
+
             if (line.hasOption("new_language")) {
                 try {
                     String lang_name = line.getOptionValue("new_language");
                     KD_core kxc = new KD_core(t);
                     kxc.createNewEmptyLanguage(lang_name.toUpperCase(),configuration);
-                    System.out.println ("\nThe new \""+lang_name.toUpperCase()+"\" language has been added to the languages.\nTo use it please specify \"CUSTOM_"+lang_name.toUpperCase()+"\" in the language parameter.");
+                    System.out.println ("\nThe new \""+lang_name.toUpperCase()+"\" language has been added to the languages.\nTo use it please specify \"CUSTOM_"+lang_name.toUpperCase()+"\" in the language parameter (-lang).");
                     System.exit(0);
 
                 } catch (Exception e) {
@@ -286,6 +294,25 @@ public class Main {
                     System.exit(1);
                 }
             }
+
+
+            if (line.hasOption("new_language_folder")) {
+                try {
+                    String path_new_lang = line.getOptionValue("new_language_folder");
+                    KD_Model model = new KD_Model(FileSystems.getDefault().getPath(path_new_lang));
+                    System.out.println ("\nThe new language folder has been created in : "+model.getCurrent_language_path()+" .\nTo use it please specify \""+model.getCurrent_language_path()+"\" in the lang_folder (-lp) parameter.");
+                    System.exit(0);
+                } catch (Exception e) {
+                    System.out.println("\nerror: Wrong value for the option new_language_folder\n");
+                    HelpFormatter formatter = new HelpFormatter();
+                    formatter.setWidth(500);
+                    formatter.printHelp("KD_Keyphrase_Digger", options);
+                    System.exit(1);
+                }
+            }
+
+
+
 
 
 

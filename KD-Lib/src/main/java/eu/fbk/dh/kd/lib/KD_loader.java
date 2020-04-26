@@ -28,7 +28,6 @@ public class KD_loader {
      *
      * @param lang             The language to be updated with the fresh data.
      * @param languagePackPath The path to the languages folder to be updated.
-     * @param languagePackPath The path to the languages folder to be updated.
      */
     public static synchronized void run_the_updater(Language lang, String languagePackPath) {
 
