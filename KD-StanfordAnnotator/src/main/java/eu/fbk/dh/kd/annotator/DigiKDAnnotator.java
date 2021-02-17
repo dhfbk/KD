@@ -94,7 +94,7 @@ public class DigiKDAnnotator implements Annotator {
 
 
 
-        configuration.skip_keyword_with_not_allowed_words = Boolean.parseBoolean(prop.getProperty(annotatorName + ".skip_keyword_with_not_allowed_words", "true"));
+        configuration.skip_keyword_with_not_allowed_words = Boolean.parseBoolean(prop.getProperty(annotatorName + ".skip_keyword_with_not_allowed_words", "false"));
         configuration.verbose = false;
 
         if (Boolean.parseBoolean(prop.getProperty(annotatorName + ".update", "false"))) {
