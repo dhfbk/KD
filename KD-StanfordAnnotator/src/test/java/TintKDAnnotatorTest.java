@@ -1,6 +1,6 @@
 import edu.stanford.nlp.pipeline.Annotation;
 import eu.fbk.dh.kd.annotator.DigiKDAnnotations;
-import eu.fbk.dh.tint.runner.TintPipeline;
+//import eu.fbk.dh.tint.runner.TintPipeline;
 
 import java.util.Properties;
 
@@ -194,12 +194,14 @@ public class TintKDAnnotatorTest {
 
             properties.setProperty("keyphrase.numberOfConcepts", "20");
 
-            TintPipeline pipeline = new TintPipeline();
+            /*TintPipeline pipeline = new TintPipeline();
             pipeline.addProperties(properties);
             pipeline.load();
 
             Annotation annotation = pipeline.runRaw(text);
             System.out.println(annotation.get(DigiKDAnnotations.KeyphrasesAnnotation.class));
+
+             */
 
         }
 
