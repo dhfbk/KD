@@ -22,12 +22,24 @@
         <module>KD-StanfordAnnotator</module>
         <module>KD-Models</module>
     </modules>
+
+    <developers>
+        <developer>
+            <name>Giovanni Moretti</name>
+        </developer>
+    </developers>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>edu.stanford.nlp</groupId>
                 <artifactId>stanford-corenlp</artifactId>
-                <version>3.9.1</version>
+                <version>4.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>19.0</version>
             </dependency>
             <dependency>
                 <groupId>eu.fbk.dh</groupId>
@@ -38,11 +50,6 @@
                 <groupId>eu.fbk.dh</groupId>
                 <artifactId>KD-Models</artifactId>
                 <version>1.0-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>19.0</version>
             </dependency>
         </dependencies>
 
@@ -62,10 +69,6 @@
                 </configuration>
             </plugin>
 
-            <!--<plugin>-->
-                <!--<groupId>org.codehaus.mojo</groupId>-->
-                <!--<artifactId>license-maven-plugin</artifactId>-->
-            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
