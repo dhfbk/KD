@@ -7,7 +7,7 @@
     <groupId>eu.fbk.dh</groupId>
     <artifactId>KD</artifactId>
     <packaging>pom</packaging>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
 
     <name>KD</name>
     <description>KD: Keyphrase Digger</description>
@@ -61,12 +61,12 @@
             <dependency>
                 <groupId>eu.fbk.dh</groupId>
                 <artifactId>KD-Lib</artifactId>
-                <version>0.1</version>
+                <version>0.2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>eu.fbk.dh</groupId>
                 <artifactId>KD-Models</artifactId>
-                <version>0.1</version>
+                <version>0.2-SNAPSHOT</version>
             </dependency>
         </dependencies>
 
